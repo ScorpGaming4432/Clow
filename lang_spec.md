@@ -119,7 +119,7 @@ b? goto add
 goto end_add
 ```
 
-`?` evaluates the preceding value or flag. If **true**, the immediately following statement executes. If **false**, it is skipped and execution continues at the statement after.
+`?` evaluates the preceding value or flag. Typically represents `if(x == 0) {something}`. If **true**, the immediately following statement executes. If **false**, it is skipped and execution continues at the statement after.
 
 Whitespace is irrelevant — the tokenizer splits on any whitespace, so the following are identical:
 
