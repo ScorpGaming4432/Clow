@@ -1,0 +1,10 @@
+multiply(a, b):
+    
+
+_start:
+    a = 5
+    b = 3
+    c = 2
+    d = b * c
+    e = a + d
+    exit(e)
