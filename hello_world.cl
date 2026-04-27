@@ -1,5 +1,5 @@
 print:
-t:=00
+t:=$00
 t:= *text
 t+b
 &t
@@ -10,8 +10,8 @@ goto print
 ;
 
 _start:
-text:= 48656C6C6F2C576F726C642100
-b:= 00
+text:= $48656C6C6F2C576F726C642100
+b:= $00
 goto print
 end_print:;
 
