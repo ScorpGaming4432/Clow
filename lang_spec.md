@@ -1,5 +1,6 @@
-# Language Specification — Draft 0.1
-> Living document. Incomplete by design.
+# Language Specification — Draft 0.2
+
+> Update! Removal of bitwise operations.
 
 ---
 
@@ -149,7 +150,7 @@ Required label. When reached, all variables are preserved at a known address. Ex
 
 ---
 
-## 6. Operations
+## 6. Operations (TO DO: REMOVE, LEAVE NAND)
 
 All operations follow the form:
 
@@ -273,4 +274,6 @@ An interesting design exercise: deliberately expose undefined behaviour as a fea
 6. **Hex literal syntax** — bare (`FF`) or prefixed (`0xFF`)? Bare preferred aesthetically. Lexer disambiguation rule needed — likely: a hex literal must start with a digit (`0`–`9`) to distinguish from identifiers. So `FF` would need to be `0FF` or `0xFF`. TBD.
 7. **Macro system** — noted as planned, design TBD.
 8. ~~**Comparison operators**~~ — resolved. Equality is user-implemented via bitwise ops (XNOR). No special comparison syntax. `?` tests a value or flag; setup is the programmer's responsibility.
-9. **XMM / FPU registers** — `a`–`p` map to general-purpose registers only. Floating point requires either raw ISA mnemonics with explicit XMM register names, or a user-implemented float multiplier in bitwise ops. No language-level float support planned.
+9. **XMM / FPU registers** — `a`–`p` map to general-purpose registers only. Floating point requires either raw ISA mnemonics with explicit XMM register names, or a user-implemented float multiplier in bitwise ops. No language-level float support planned
+10. Why does the language strip all arithmetic operations?
+10.A. Good call! Since we're discriminating all arithmetic except basic ones on our processors, we're making things equal. Since all operations can be expressed via NAND gates, the only thing we'll keep will be NOT and AND and NAND (to make things just a bit cleaner :3)
